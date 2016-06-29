@@ -1,0 +1,7 @@
+{
+  "routes:before": {
+    "morgan": {
+      "enabled" : false
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "Soul": {
+    "dataSource": "coreMysql",
+    "public": true,
+    "$promise": {},
+    "$resolved": true,
+    "options": {
+      "saltWorkFactor": 1
+    }
+  }
+}

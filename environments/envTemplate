@@ -1,0 +1,14 @@
+coreMysqlUser=
+coreMysqlPassword=
+coreMysqlHost=
+coreMysqlDatabase=
+
+peermatchMysqlUser=
+peermatchMysqlPassword=
+peermatchMysqlHost=
+peermatchMysqlDatabase=
+
+portalMysqlUser=
+portalMysqlPassword=
+portalMysqlHost=
+portalMysqlDatabase=
