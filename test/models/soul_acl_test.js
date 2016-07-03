@@ -42,7 +42,7 @@ describe('Test Soul ACL', function () {
     done();
   });
 
-  it('login', (done) => {
+  it('POST login', (done) => {
     utils(app).json('post', '/Souls/login')
       .send({
         email: 'test+notexisting@email.com',
@@ -75,8 +75,8 @@ describe('Test Soul ACL', function () {
       .json('get', '/Souls')
       .expect(401, done)
   );
- 
-  it('logout', (done) => {
+
+  it('POST logout', (done) => {
     utils(app).json('post', '/Souls/login')
       .send({
         email: 'test+admin@email.com',
