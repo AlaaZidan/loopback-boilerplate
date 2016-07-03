@@ -8,7 +8,7 @@ const debug = require('debug')('coreapi:soul');
 const utils = require('loopback-datasource-juggler/lib/utils');
 
 module.exports = Soul => {
-  Soul.prototype.removeRole = function addRole(roleName) {
+  Soul.prototype.unassignRole = function unassignRole(roleName) {
     const that = this;
     const app = Soul.app;
     const Role = app.models.Role;
@@ -31,7 +31,7 @@ module.exports = Soul => {
       });
   };
 
-  Soul.prototype.addRole = function addRole(roleName) {
+  Soul.prototype.assignRole = function assignRole(roleName) {
     const that = this;
 
     const app = Soul.app;
@@ -67,10 +67,13 @@ module.exports = Soul => {
     }
 
     // TODO: custom login
-
     callback = callback || utils.createPromiseCallback();
 
-    return callback.$promise;
+    // return callback.$promise;
+    return Promise.resolve().then(() => {
+      debug('TODO: implement fake login');
+      return false;
+    });
   };
 
   const isStatic = true;
