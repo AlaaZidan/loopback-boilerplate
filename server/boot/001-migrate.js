@@ -1,10 +1,10 @@
-const debug = require('debug')('coreapi:migrate');
+const debug = require('debug')('boilerplate:migrate');
 
-module.exports = function migrateCoreMysql(server) {
+module.exports = function migrateDatabase(server) {
   const Role = server.models.Role;
 
   return server
-    .datasources.coreMysql
+    .datasources.db
     .autoupdate()
     .then(() => {
       debug('Database tables updated');

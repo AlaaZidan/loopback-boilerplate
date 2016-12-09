@@ -1,8 +1,8 @@
-/* eslint-disable no-param-reassign, strict */
-'use strict';
+/* eslint-disable */
+
 const request = require('supertest');
 const _ = require('lodash');
-const debug = require('debug')('coreapi:test:dbutils');
+const debug = require('debug')('boilerplate:test:dbutils');
 
 module.exports = function TestUtils(app) {
   function json(verb, urlIn, query, token) {
@@ -27,7 +27,7 @@ module.exports = function TestUtils(app) {
   }
 
   function login(email, password) {
-    return json('post', '/Souls/login')
+    return json('post', '/MyUsers/login')
       .send({
         email,
         password,
@@ -36,7 +36,7 @@ module.exports = function TestUtils(app) {
   }
 
   function logout(token) {
-    return json('post', '/Souls/login', {}, token)
+    return json('post', '/MyUsers/login', {}, token)
       .send()
       .expect(200);
   }

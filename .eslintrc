@@ -1,8 +1,13 @@
 {
-    "extends": "airbnb",
+    "extends": "airbnb-base",
+    "installedESLint": true,
     "rules": {
-        "no-console": ["off"],
-        "yoda": ["off"]
+        "no-console": [
+            "off"
+        ],
+        "yoda": [
+            "off"
+        ]
     },
     "env": {
         "mocha": true

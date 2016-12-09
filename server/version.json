@@ -1,6 +1,7 @@
 {
   "tag": "cleanup",
-  "short": "bb86b7f",
+  "short": "xxxxxxx",
   "branch": "develop",
-  "message": "timeout in tests"
+  "message": "fake",
+  "vnumber": "x.x.x"
 }

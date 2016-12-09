@@ -1,6 +1,6 @@
 const loopback = require('loopback');
 const boot = require('loopback-boot');
-const debug = require('debug')('coreapi:server');
+const debug = require('debug')('boilerplate:server');
 
 const app = module.exports = loopback();
 

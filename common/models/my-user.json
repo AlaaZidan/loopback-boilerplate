@@ -1,13 +1,12 @@
 {
-  "name": "Soul",
+  "name": "MyUser",
   "base": "User",
   "idInjection": true,
+  "strict": "throw",
   "options": {
     "validateUpsert": true
   },
-  "properties": {
-    
-  },
+  "properties": {},
   "validations": [],
   "relations": {
     "roles": {

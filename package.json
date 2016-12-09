@@ -1,62 +1,57 @@
 {
-  "name": "coreapi",
-  "version": "0.2.3",
+  "name": "loopback-boilerplate",
+  "version": "0.3.0",
   "main": "server/server.js",
   "scripts": {
     "start.local": "node_modules/.bin/nodemon --debug -r dotenv/config . dotenv_config_path=environments/.dev",
     "start": "node .",
-    "eslint": "./node_modules/.bin/eslint .",
-    "jscs": "./node_modules/.bin/jscs .",
-    "lint": "npm run eslint && npm run jscs",
+    "lint": "./node_modules/.bin/eslint .",
     "pretest": "npm run lint",
     "posttest": "./node_modules/.bin/nsp check",
-    "mocha": "./node_modules/.bin/mocha -R spec test/{,**/}*.js",
-    "mochadebug": "./node_modules/.bin/mocha --debug-brk -R dot test/{,**/}*.js",
+    "mocha": "./node_modules/.bin/mocha -R spec 'test/{,**/}*.js'",
+    "mochadebug": "./node_modules/.bin/mocha --debug-brk -R dot 'test/{,**/}*.js'",
     "test": "npm run mocha",
-    "coverage": "istanbul cover _mocha -- -R spec test/{,**/}*.js",
-    "version": "node lib/writeVersionFile/index.js"
+    "coverage": "istanbul cover _mocha -- -R spec 'test/{,**/}*.js'",
+    "writeversion": "node lib/writeVersionFile/index.js"
   },
   "engines": {
-    "node": "4.4.x"
+    "node": "6.x.x"
   },
-  "private": true,
   "dependencies": {
-    "bcrypt": "0.8.7",
-    "bluebird": "3.4.1",
+    "bcrypt": "1.0.1",
+    "bluebird": "3.4.6",
     "compression": "1.6.2",
-    "cors": "2.7.1",
-    "debug": "2.2.0",
-    "helmet": "2.1.1",
-    "lodash": "4.13.1",
-    "loopback": "2.29.0",
-    "loopback-boot": "2.18.1",
-    "loopback-component-explorer": "2.5.0",
+    "cors": "2.8.1",
+    "debug": "2.3.3",
+    "helmet": "3.1.0",
+    "lodash": "4.17.2",
+    "loopback": "3.1.x",
+    "loopback-boot": "2.23.0",
+    "loopback-component-explorer": "2.7.0",
     "loopback-component-model-diagram": "0.2.0",
-    "loopback-connector-mysql": "2.2.1",
-    "loopback-datasource-juggler": "2.46.1",
+    "loopback-connector-mysql": "2.4.0",
+    "loopback-datasource-juggler": "3.1.0",
     "morgan": "1.7.0",
-    "serve-favicon": "2.3.0"
+    "serve-favicon": "2.3.2",
+    "strong-error-handler": "1.1.1"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "3.5.0",
     "dotenv": "2.0.0",
-    "eslint": "2.12.0",
-    "eslint-config-airbnb": "9.0.1",
-    "eslint-plugin-import": "1.8.1",
-    "eslint-plugin-jsx-a11y": "1.4.2",
-    "eslint-plugin-react": "5.1.1",
-    "git-rev-sync": "1.6.0",
-    "istanbul": "0.4.3",
-    "jscs": "3.0.4",
-    "jsonfile": "2.3.1",
-    "mocha": "2.5.3",
-    "mysql2": "1.0.0-rc.5",
-    "nsp": "2.4.0",
-    "supertest": "1.2.0"
+    "eslint": "3.11.1",
+    "eslint-config-airbnb": "13.0.0",
+    "eslint-plugin-import": "2.2.0",
+    "git-rev-sync": "1.8.0",
+    "istanbul": "0.4.5",
+    "jsonfile": "2.4.0",
+    "mocha": "3.2.0",
+    "mysql2": "1.1.2",
+    "nsp": "2.6.2",
+    "supertest": "2.0.1"
   },
   "repository": {
     "type": "",
     "url": ""
   },
-  "description": "CoreAPI"
+  "description": "loopback-boilerplate"
 }

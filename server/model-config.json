@@ -14,25 +14,23 @@
     ]
   },
   "AccessToken": {
-    "dataSource": "coreMysql",
+    "dataSource": "db",
     "public": false
   },
   "ACL": {
-    "dataSource": "coreMysql",
+    "dataSource": "db",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "coreMysql",
+    "dataSource": "db",
     "public": false
   },
   "Role": {
-    "dataSource": "coreMysql",
+    "dataSource": "db",
     "public": false
   },
-  "Soul": {
-    "dataSource": "coreMysql",
-    "public": true,
-    "$promise": {},
-    "$resolved": true
+  "MyUser": {
+    "dataSource": "db",
+    "public": true
   }
 }

@@ -1,14 +1,7 @@
-coreMysqlUser=
-coreMysqlPassword=
-coreMysqlHost=
-coreMysqlDatabase=
+DEBUG='boilerplate:*'
 
-peermatchMysqlUser=
-peermatchMysqlPassword=
-peermatchMysqlHost=
-peermatchMysqlDatabase=
+User=
+Password=
+Host=
+Database=
 
-portalMysqlUser=
-portalMysqlPassword=
-portalMysqlHost=
-portalMysqlDatabase=

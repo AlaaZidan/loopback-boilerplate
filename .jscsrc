@@ -1,6 +1,10 @@
 {
     "preset": "airbnb",
     "disallowYodaConditions": false,
-    "safeContextKeyword" : ["that"],
-    "excludeFiles": ["common/Temp", "coverage"]
+    "safeContextKeyword": [
+        "that"
+    ],
+    "excludeFiles": [
+        "coverage"
+    ]
 }

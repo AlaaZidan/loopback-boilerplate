@@ -29,7 +29,6 @@
     1. modify `before((done)` in the test https://github.com/redbabel/loopback-boilerplate/tree/master/test/db_populate_data files https://github.com/redbabel/loopback-boilerplate/blob/master/test/models adding the files in https://github.com/redbabel/loopback-boilerplate/tree/master/test/db_populate_data 
     1. implement other tests if needed (https://github.com/redbabel/loopback-boilerplate/tree/master/test)
 
-1. implement Soul.login() at https://github.com/redbabel/loopback-boilerplate/blob/master/common/models/soul.js
 
 
 

@@ -1,4 +1,4 @@
-module.exports = server => {
+module.exports = (server) => {
   // enable authentication
   server.enableAuth();
 };

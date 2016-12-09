@@ -1,6 +1,6 @@
 {
-  "Soul": {
-    "dataSource": "coreMysql",
+  "MyUser": {
+    "dataSource": "db",
     "public": true,
     "$promise": {},
     "$resolved": true,

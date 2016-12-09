@@ -1,9 +1,9 @@
-/* eslint-disable no-param-reassign, strict */
-'use strict';
+/* eslint-disable no-param-reassign  */
+
 const _ = require('lodash');
 const mysql = require('mysql2');
 const fs = require('fs');
-const debug = require('debug')('coreapi:test:dbutils');
+const debug = require('debug')('boilerplate:test:dbutils');
 const Promise = require('bluebird');
 const server = require('../server/server');
 
@@ -40,7 +40,7 @@ const loadSQLScripts = (scriptsDirs) => {
 
   let connection;
   return mysql.createConnectionPromise(connectionSettings)
-    .then(_connection => {
+    .then((_connection) => {
       connection = _connection;
       return Promise
         .each(fileNames, (fileName) => {
@@ -66,10 +66,10 @@ const loadJSONScripts = (scriptDirs) => {
 /* eslint-disable camelcase */
 const createUserWithRole = (email, password, roleName) => {
   if (undefined === roleName) {
-    return server.models.Soul.create({ email, password });
+    return server.models.MyUser.create({ email, password });
   }
 
-  return server.models.Soul
+  return server.models.MyUser
     .create({ email, password })
     .then(user => user.assignRole(roleName));
 };
@@ -78,7 +78,7 @@ const createUserWithRole = (email, password, roleName) => {
 /* eslint-enable camelcase */
 
 const loadOnlyLoopbackDB = () =>
-  server.datasources.coreMysql.automigrate()
+  server.datasources.db.automigrate()
     .then(() => {
       const Role = server.models.Role;
       debug('Database tables updated');
@@ -87,8 +87,7 @@ const loadOnlyLoopbackDB = () =>
       return Promise.all([
         Role.findOrCreate({ where: { name: 'admin' } }, { name: 'admin' }),
       ]);
-    })
-    .then(() => { });
+    });
 
 // TODO: add test users
 const populateLooopbackDB = () =>
@@ -100,7 +99,7 @@ const populateLooopbackDB = () =>
     })
     .then(() => { });
 
-const loadAndPopulateAllDBS = (scriptsDirs) =>
+const loadAndPopulateAllDBS = scriptsDirs =>
   // loadSQLScripts(scriptsDirs)
   loadJSONScripts(scriptsDirs)
     .then(() => loadOnlyLoopbackDB())
