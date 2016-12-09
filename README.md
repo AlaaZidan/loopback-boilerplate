@@ -3,11 +3,7 @@
 1. create `.dev` file
 
     ```
-    coreMysqlUser=
-    coreMysqlPassword=
-    coreMysqlHost=
-    coreMysqlDatabase=
-
+    DEBUG='boilerplate:*'
     ``` 
 1. `npm run start.local`
 
@@ -21,13 +17,14 @@
 
 ###From Boiler plate to working code
 
-1. tests
+1. Code.
+    1. rename user model name (now 'MyUser' is been used). 
+    1. reame 'boilerplate' in debug assertion into the name of your project.
+
+1. Tests
 
     1. add test users and test roles at https://github.com/redbabel/loopback-boilerplate/blob/master/test/dbUtils.js
-
-    1. add database populate scripts in https://github.com/redbabel/loopback-boilerplate/tree/master/test/db_populate_data
-    1. modify `before((done)` in the test https://github.com/redbabel/loopback-boilerplate/tree/master/test/db_populate_data files https://github.com/redbabel/loopback-boilerplate/blob/master/test/models adding the files in https://github.com/redbabel/loopback-boilerplate/tree/master/test/db_populate_data 
-    1. implement other tests if needed (https://github.com/redbabel/loopback-boilerplate/tree/master/test)
+    1. TBD 
 
 
 
