@@ -1,14 +1,13 @@
-/* eslint-env mocha */
 /* eslint-disable global-require, func-names */
 
 const chai = require('chai');
 
 const expect = chai.expect;
 const utils = require('../testUtils');
-const app = require('../../server/server');
 const dbUtils = require('../dbUtils');
 const debug = require('debug')('boilerplate:test:myser');
 
+let app;
 
 // http://tobyho.com/2015/12/16/mocha-with-promises/
 describe('Test MyUser ACL', function () {
@@ -21,8 +20,10 @@ describe('Test MyUser ACL', function () {
     }
 
     return dbUtils
-      .loadOnlyLoopbackDB()
-      .then(() => dbUtils.populateLooopbackDB())
+      .loadAndPopulateAllDBS([])
+      .then((_app) => {
+        app = _app;
+      })
 
       .catch((err) => {
         debug(err);

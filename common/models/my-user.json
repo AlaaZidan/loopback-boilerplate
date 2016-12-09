@@ -2,11 +2,17 @@
   "name": "MyUser",
   "base": "User",
   "idInjection": true,
-  "strict": "throw",
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+    "lastUpdated": false,
+    "credentials": false,
+    "challenges": false,
+    "realm": false,
+    "status": false,
+    "username": false
+  },
   "validations": [],
   "relations": {
     "roles": {

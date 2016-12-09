@@ -4,10 +4,11 @@
 const chai = require('chai');
 
 const expect = chai.expect;
-const app = require('../../server/server');
 const dbUtils = require('../dbUtils');
 const debug = require('debug')('boilerplate:test:MyUser_test');
 const _ = require('lodash');
+
+let app;
 
 // http://tobyho.com/2015/12/16/mocha-with-promises/
 describe('Test MyUser model', function () {
@@ -19,7 +20,16 @@ describe('Test MyUser model', function () {
       return Promise.reject(new Error('NODE_ENV is not set as test'));
     }
 
-    return dbUtils.loadOnlyLoopbackDB();
+    return dbUtils
+      .loadAndPopulateAllDBS([])
+      .then((_app) => {
+        app = _app;
+      })
+
+      .catch((err) => {
+        debug(err);
+        throw err;
+      });
   });
 
   after((done) => {

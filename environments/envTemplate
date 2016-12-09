@@ -1,7 +1,6 @@
 DEBUG='boilerplate:*'
 
-User=
-Password=
-Host=
-Database=
-
+MYSQL_USER=
+MYSQL_PASSWORD=
+MYSQL_HOST=
+MYSQL_DB=

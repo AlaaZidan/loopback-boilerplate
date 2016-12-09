@@ -57,12 +57,11 @@ const loadSQLScripts = (scriptsDirs) => {
     .then(() => { });
 };
 
-const loadJSONScripts = (scriptDirs) => {
-  const isEmpty = !scriptDirs;
-  return Promise.resolve(() => isEmpty);
-};
+// const loadJSONScripts = (scriptDirs) => {
+//   const isEmpty = !scriptDirs;
+//   return Promise.resolve(() => isEmpty);
+// };
 
-// jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 /* eslint-disable camelcase */
 const createUserWithRole = (email, password, roleName) => {
   if (undefined === roleName) {
@@ -74,10 +73,24 @@ const createUserWithRole = (email, password, roleName) => {
     .then(user => user.assignRole(roleName));
 };
 
-// jscs:enable
+
+/* eslint-disable func-names, prefer */
+const startloopbackApp = (app) => {
+  app.start();
+  return new Promise((resolve, reject) => {
+    app.on('started', resolve);
+    app.on('error', reject);
+  });
+};
+/* eslint-enable */
+
+/* eslint-disable global-require */
+const loadLoopbackApp = () => Promise.resolve(require('../server/server'));
+/* eslint-enable */
+
 /* eslint-enable camelcase */
 
-const loadOnlyLoopbackDB = () =>
+const loadOnlyLoopbackDB = app =>
   server.datasources.db.automigrate()
     .then(() => {
       const Role = server.models.Role;
@@ -87,27 +100,32 @@ const loadOnlyLoopbackDB = () =>
       return Promise.all([
         Role.findOrCreate({ where: { name: 'admin' } }, { name: 'admin' }),
       ]);
-    });
+    })
+    .then(() => app);
+
 
 // TODO: add test users
-const populateLooopbackDB = () =>
+const populateLooopbackDB = app =>
   Promise.all([
     createUserWithRole('test+admin@email.com', 'foo', 'admin'),
   ])
     .then(() => {
       debug('Test users with roles created');
     })
-    .then(() => { });
+    .then(() => { })
+    .then(() => app);
 
 const loadAndPopulateAllDBS = scriptsDirs =>
-  // loadSQLScripts(scriptsDirs)
-  loadJSONScripts(scriptsDirs)
-    .then(() => loadOnlyLoopbackDB())
-    .then(() => populateLooopbackDB())
-    .then(() => { })
+  loadSQLScripts(scriptsDirs)
+    // loadJSONScripts(scriptsDirs)
+    .then(() => loadLoopbackApp())
+    .then(app => loadOnlyLoopbackDB(app))
+    .then(app => populateLooopbackDB(app))
     .catch(err => debug(err));
 
 exports.loadLegacyDBs = loadSQLScripts;
 exports.populateLooopbackDB = populateLooopbackDB;
-exports.loadOnlyLoopbackDB = loadOnlyLoopbackDB;
+exports.loadOnlyLoopbackDB = () => loadLoopbackApp().then(app => loadOnlyLoopbackDB(app));
 exports.loadAndPopulateAllDBS = loadAndPopulateAllDBS;
+exports.startloopbackApp = startloopbackApp;
+exports.loadLoopbackApp = loadLoopbackApp;

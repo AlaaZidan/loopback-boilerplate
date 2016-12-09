@@ -2,8 +2,6 @@
   "MyUser": {
     "dataSource": "db",
     "public": true,
-    "$promise": {},
-    "$resolved": true,
     "options": {
       "saltWorkFactor": 1
     }
