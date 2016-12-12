@@ -8,8 +8,8 @@
     "lint": "./node_modules/.bin/eslint .",
     "pretest": "npm run lint",
     "posttest": "./node_modules/.bin/nsp check",
-    "mocha": "./node_modules/.bin/mocha -R spec 'test/{,**/}*.js'",
-    "mochadebug": "./node_modules/.bin/mocha --debug-brk -R dot 'test/{,**/}*.js'",
+    "mocha": "./node_modules/.bin/mocha -R spec 'test/{,**/}*.js' -r dotenv/config dotenv_config_path=./environments/.test",
+    "mochadebug": "./node_modules/.bin/mocha --debug-brk -R spec 'test/{,**/}*.js' -r dotenv/config dotenv_config_path=./environments/.test",
     "test": "npm run mocha",
     "coverage": "istanbul cover _mocha -- -R spec 'test/{,**/}*.js'",
     "writeversion": "node lib/writeVersionFile/index.js"
@@ -38,8 +38,8 @@
   "devDependencies": {
     "chai": "3.5.0",
     "dotenv": "2.0.0",
-    "eslint": "3.11.1",
-    "eslint-config-airbnb-base": "10.0.1",
+    "eslint": "3.12.0",
+    "eslint-config-airbnb-base": "11.0.0",
     "eslint-plugin-import": "2.2.0",
     "git-rev-sync": "1.8.0",
     "istanbul": "0.4.5",
