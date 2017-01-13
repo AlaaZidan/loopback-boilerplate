@@ -1,4 +1,4 @@
-/* eslint-disable global-require, func-names */
+/* eslint-disable func-names */
 
 const chai = require('chai');
 

@@ -2,7 +2,7 @@
 # It will be run before the other scripts
 
 -- # Automigrate does not create the db itself
--- CREATE DATABASE  IF NOT EXISTS `testdb`;
+CREATE DATABASE  IF NOT EXISTS `testboilerplate`;
 
 -- # We grant a fake permission because IF EXIST is supported from 5.7 onwards, actual db is 5.6
 -- # https://coderwall.com/p/aqac0w/mysql-would-you-please-drop-user-if-exists
@@ -11,5 +11,5 @@
 -- DROP USER 'testuser'@'localhost';
 -- CREATE USER `testuser`@`localhost` IDENTIFIED BY 'testuserpassword';
 
--- # All priviliges for testdb db
--- GRANT ALL PRIVILEGES ON `testdb`.* TO `testuser`@`localhost`;
+-- # All priviliges for testboilerplate db
+-- GRANT ALL PRIVILEGES ON `testboilerplate`.* TO `testuser`@`localhost`;

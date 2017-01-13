@@ -1,5 +1,5 @@
 /* eslint-env mocha */
-/* eslint-disable global-require, func-names, prefer-arrow-callback */
+/* eslint-disable func-names */
 
 const chai = require('chai');
 
