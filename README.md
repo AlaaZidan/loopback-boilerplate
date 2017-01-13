@@ -1,6 +1,3 @@
-# In Stale state. Waiting for the release of loopback 3.0. 
-# The boilerplate as now is functional, the deps although are not stable.
-
 ##Development:
 
 1. create `.dev` file
