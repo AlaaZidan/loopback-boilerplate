@@ -17,6 +17,11 @@ app.start = function start() {
       const explorerPath = app.get('loopback-component-explorer').mountPath;
       debug('Browse your REST API at %s%s', baseUrl, explorerPath);
     }
+
+    if (app.get('loopback-component-model-diagram')) {
+      const modelDiagramPath = app.get('loopback-component-model-diagram').mountPath;
+      debug('Browse your entity relation diagram at %s%s', baseUrl, modelDiagramPath);
+    }
   });
 };
 
