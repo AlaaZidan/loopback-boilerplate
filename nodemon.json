@@ -1,0 +1,9 @@
+{
+  "watch": [
+    "**/*.ts",
+    "**/*.js",
+    "**/*.json"
+  ],
+  "exec": "./node_modules/.bin/ts-node",
+  "ext": "js, json, ts"
+}

@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "ES2015",
+        "noImplicitAny": true,
+        "sourceMap": false,
+        "outDir": "build",
+        "rootDir": ".",
+        "allowJs": true,
+        "listEmittedFiles": false,
+        "listFiles": false,
+        "pretty": true
+    },
+    "files": [
+        "**/*.json"
+    ],
+    "include": [
+        "**/*.ts",
+        "**/*.js",
+        "**/*.json"
+    ],
+    "exclude": [
+        "node_modules",
+        "test"
+    ]
+}
