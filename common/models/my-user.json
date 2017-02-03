@@ -24,6 +24,12 @@
   },
   "acls": [
     {
+      "property": "fakeMethod",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "principalType": "ROLE"
+    },
+    {
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "$owner",

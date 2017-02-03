@@ -1,0 +1,7 @@
+import * as debug from "debug"
+
+const d = debug('boilerplate:index');
+
+debug('start');
+console.log('starting server in index.ts');
+require('./server/server.ts').start();

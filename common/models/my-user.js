@@ -1,4 +1,5 @@
 /* eslint-disable no-param-reassign */
+
 // const debug = require('debug')('boilerplate:myuser');
 
 module.exports = (MyUser) => {
@@ -46,4 +47,15 @@ module.exports = (MyUser) => {
 
       .then(rm => rm || role.principals.create({ principalType: RM.USER, principalId: that.id }));
   };
+
+  MyUser.fakeMethod = function fakeMethod(fakepar) {
+    console.log('fakepar');
+    return Promise.resolve(`fakepar:${fakepar}`);
+  };
+
+  MyUser.remoteMethod('fakeMethod', {
+    accepts: { type: 'string', arg: 'fakepar' },
+    returns: { type: 'string', name: 'fakeret' },
+    http: { verb: 'get' },
+  });
 };

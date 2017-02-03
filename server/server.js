@@ -4,6 +4,9 @@ const debug = require('debug')('boilerplate:server');
 
 const app = module.exports = loopback();
 
+console.log('server:server');
+console.log(process.env.DEBUG);
+
 // https://docs.strongloop.com/display/public/LB/Making+authenticated+requests
 app.use(loopback.token({ model: app.models.accessToken, currentUserLiteral: 'me' }));
 
@@ -32,6 +35,8 @@ boot(app, __dirname, (err) => {
 
   // start the server if `$ node server.js`
   if (require.main === module) {
+    console.log('starting server in server/server.js');
+
     app.start();
   }
 });
