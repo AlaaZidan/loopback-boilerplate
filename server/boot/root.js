@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const version = require('../version.json');
 
 const tag = version.tag || 'NOTAG';

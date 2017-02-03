@@ -1,4 +1,3 @@
-/* eslint-env mocha */
 /* eslint-disable func-names */
 
 const chai = require('chai');

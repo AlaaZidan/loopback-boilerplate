@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign  */
-
 const _ = require('lodash');
 const mysql = require('mysql2');
 const fs = require('fs');
@@ -62,7 +60,6 @@ const loadSQLScripts = (scriptsDirs) => {
 //   return Promise.resolve(() => isEmpty);
 // };
 
-/* eslint-disable camelcase */
 const createUserWithRole = (email, password, roleName) => {
   if (undefined === roleName) {
     return server.models.MyUser.create({ email, password });
@@ -74,7 +71,6 @@ const createUserWithRole = (email, password, roleName) => {
 };
 
 
-/* eslint-disable func-names, prefer */
 const startloopbackApp = (app) => {
   app.start();
   return new Promise((resolve, reject) => {
@@ -82,13 +78,11 @@ const startloopbackApp = (app) => {
     app.on('error', reject);
   });
 };
-/* eslint-enable */
 
 /* eslint-disable global-require */
 const loadLoopbackApp = () => Promise.resolve(require('../server/server'));
 /* eslint-enable */
 
-/* eslint-enable camelcase */
 
 const loadOnlyLoopbackDB = app =>
   server.datasources.db.automigrate()

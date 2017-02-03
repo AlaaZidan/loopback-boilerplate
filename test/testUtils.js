@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const request = require('supertest');
 const _ = require('lodash');
 const debug = require('debug')('boilerplate:test:dbutils');
@@ -15,7 +13,10 @@ module.exports = function TestUtils(app) {
     }
 
     const str = _.join(qString, '&');
+
+    /* eslint-disable no-extra-boolean-cast */
     const url = (!!str ? `/api/v1${urlIn}?${str}` : `/api/v1${urlIn}`);
+    /* eslint-enable */
 
     debug(`${verb}: ${url}`);
     const output = request(app)[verb](url)
