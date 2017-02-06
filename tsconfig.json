@@ -11,14 +11,6 @@
         "listFiles": false,
         "pretty": true
     },
-    "files": [
-        "**/*.json"
-    ],
-    "include": [
-        "**/*.ts",
-        "**/*.js",
-        "**/*.json"
-    ],
     "exclude": [
         "node_modules",
         "test"
