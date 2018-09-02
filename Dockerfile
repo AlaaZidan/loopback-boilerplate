@@ -2,7 +2,7 @@ from node:8
 
 maintainer fixed.solutions
 
-copy ./loopback-boilerplate boiler-container
+copy . boiler-container
 
 workdir boiler-container
 
