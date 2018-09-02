@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 pipeline {
 agent {
 label 'Slave'
@@ -7,6 +9,9 @@ stage ('Build'){
   agent {
 dockerfile true
   } 
+  steps {
+   echo 'Building'
+  }
 }
 }
 }
