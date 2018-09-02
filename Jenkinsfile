@@ -1,10 +1,12 @@
 pipeline {
 agent {
-label Slave
+label 'Slave'
 }
 steps {
-step(Build){
+step('Build'){
+  agent {
 dockerfile true
+  } 
 }
 }
 }
