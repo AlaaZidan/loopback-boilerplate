@@ -1,15 +1,11 @@
 #!/usr/bin/env groovy
 
 pipeline {
-agent {
-label 'Slave'
-}
+agent any
 stages {
 stage ('Build'){
-  agent {
-dockerfile true
-  } 
   steps {
+    sh 'docker build -f Dockerfile -t boilertest .'
    echo 'Building'
   }
 }
